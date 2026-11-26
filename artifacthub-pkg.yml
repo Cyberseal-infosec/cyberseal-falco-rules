@@ -1,0 +1,20 @@
+version: 0.1.0
+name: cyberseal-container-security-rules
+displayName: Cyber Seal Container Security Rules
+createdAt: "2026-11-26T12:00:00+05:30"
+description: Falco rules by Cyber Seal to detect suspicious activity inside containers.
+homeURL: https://www.thecyberseal.com
+license: Apache-2.0
+keywords:
+  - falco
+  - security
+  - containers
+  - kubernetes
+provider:
+  name: Cyber Seal Infosec Solutions
+maintainers:
+  - name: Cyber Seal
+    email: info@thecyberseal.com
+links:
+  - name: Website
+    url: https://www.thecyberseal.com
