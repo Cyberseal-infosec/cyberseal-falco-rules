@@ -1,0 +1,13 @@
+- rule: Cyberseal Shell Spawned in Container
+  desc: Detects an interactive shell started inside a container.
+  condition: spawned_process and container and proc.name in (bash, sh, zsh) and proc.tty != 0
+  output: "Shell spawned in container (user=%user.name container=%container.name image=%container.image.repository cmd=%proc.cmdline)"
+  priority: WARNING
+  tags: [container, shell, mitre_execution]
+
+- rule: Cyberseal Package Manager Run in Container
+  desc: Detects package managers run inside a running container, which may indicate tampering.
+  condition: spawned_process and container and proc.name in (apt, apt-get, yum, dnf, apk)
+  output: "Package manager run in container (user=%user.name container=%container.name cmd=%proc.cmdline)"
+  priority: NOTICE
+  tags: [container, mitre_persistence]
